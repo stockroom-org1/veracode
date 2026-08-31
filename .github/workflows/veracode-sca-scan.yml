@@ -8,6 +8,7 @@ concurrency:
 env:
   VERACODE_WEB_BASE_COMMERCIAL: web-agora-stage-103.stage.veracode.io
   VERACODE_API_BASE_COMMERCIAL: api-agora-stage-103.stage.veracode.io
+  SRCCLR_API_URL: https://api-stage-103.stage.srcclr.io
   VERACODE_SKIP_DOMAIN_VERIFICATION: true
   
 on:
