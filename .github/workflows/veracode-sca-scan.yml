@@ -5,11 +5,8 @@ run-name: Software Composition Analysis - ${{ github.event.client_payload.workfl
 concurrency:
   group: ${{ github.event.client_payload.event_type }}-${{ github.event.client_payload.repository.name }}-${{ github.event.client_payload.repository.branch }}
   cancel-in-progress: true
-env:
-  VERACODE_WEB_BASE_COMMERCIAL: web-agora-stage-103.stage.veracode.io
-  VERACODE_API_BASE_COMMERCIAL: api-agora-stage-103.stage.veracode.io
-  SRCCLR_API_URL: https://api-stage-103.stage.srcclr.io
-  VERACODE_SKIP_DOMAIN_VERIFICATION: true
+
+  
   
 on:
   repository_dispatch:
