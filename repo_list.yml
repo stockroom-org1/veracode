@@ -16,3 +16,7 @@ include_repos:
 exclude_repos:
   - 'veracode'
   - 'stockroom-deployment'
+  - 'uploadandscan-action'
+  - 'Veracode-pipeline-scan-action'
+  - 'github-actions-integration-helper'
+  
