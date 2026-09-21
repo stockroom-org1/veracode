@@ -17,7 +17,7 @@ veracode_static_scan:
   # If the analysis_on_platform is set to true,
   # Veracode will save your last scan result, on the default branch, as an application profile with the same name as your scanned repository on the Veracode platform. 
   # If the analysis_on_platform is set to false, scan results will not be saved to the Veracode platform.
-  analysis_on_platform: true
+  analysis_on_platform: false
   profile: test-app-1
   # If break_build_policy_findings is set to true, the build will break when findings violate the policy.
   break_build_policy_findings: true
@@ -49,7 +49,7 @@ veracode_sca_scan:
       - '*'
     branches_to_exclude:
   pull_request:
-    trigger: true
+    trigger: false
     action:
       - opened
       - synchronize
