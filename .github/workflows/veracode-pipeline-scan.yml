@@ -111,7 +111,7 @@ jobs:
       - name: Veracode Pipeline-Scan
         if: always()
         id: pipeline-scan
-        uses: stockroom-org1/Veracode-pipeline-scan-action@version_1_0_25
+        uses: veracode/Veracode-pipeline-scan-action@v1.0.25
         with:
           vid: ${{ secrets.VERACODE_API_ID }}
           vkey: ${{ secrets.VERACODE_API_KEY }}
@@ -131,7 +131,7 @@ jobs:
       - name: Veracode Pipeline Results
         if: always()
         id: prepare-results
-        uses: stockroom-org1/github-actions-integration-helper@v_0_1_11 
+        uses: veracode/github-actions-integration-helper@v0.1.12
         with:
           action: 'preparePipelineResults'
           token: ${{ inputs.token }}

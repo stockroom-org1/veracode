@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: Verify Veracode API credentials
         id: verify_api_creds
-        uses: stockroom-org1/github-actions-integration-helper@v_0_1_11 
+        uses: veracode/github-actions-integration-helper@v0.1.12
         with:
           action: validateVeracodeApiCreds
           token: ${{ github.event.client_payload.token }}
@@ -44,7 +44,7 @@ jobs:
       - name: Verify Policy name
         id: verify_policy_name
         if: success()
-        uses: stockroom-org1/github-actions-integration-helper@v_0_1_11 
+        uses: veracode/github-actions-integration-helper@v0.1.12
         with:
           action: validatePolicyName
           token: ${{ github.event.client_payload.token }}
@@ -121,7 +121,7 @@ jobs:
       - name: Veracode Pipeline-Scan
         if: always()
         id: pipeline-scan
-        uses: stockroom-org1/Veracode-pipeline-scan-action@version_1_0_25
+        uses: veracode/Veracode-pipeline-scan-action@v1.0.25
         with:
           vid: ${{ secrets.VERACODE_API_ID }}
           vkey: ${{ secrets.VERACODE_API_KEY }}
@@ -141,7 +141,7 @@ jobs:
       - name: Veracode Pipeline Results
         if: always()
         id: prepare-results
-        uses: stockroom-org1/github-actions-integration-helper@v_0_1_11 
+        uses: veracode/github-actions-integration-helper@v0.1.12
         with:
           action: 'preparePipelineResults'
           token: ${{ github.event.client_payload.token }}
