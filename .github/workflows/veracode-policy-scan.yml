@@ -63,9 +63,12 @@ jobs:
     runs-on: ${{ fromJSON(inputs.default_runs_on) }}
     name: policy scan
 
-    steps:
-      - name: checkout repo
-        uses: actions/checkout@v6
+    steps:      
+      - uses: actions/checkout@v6
+        with:
+          repository: ${{ inputs.owner }}/${{ inputs.repo }}
+          ref: ${{ inputs.ref }}
+          token: ${{ inputs.token }}
 
       # get the compiled binary from a previous job
       - name: get archive
